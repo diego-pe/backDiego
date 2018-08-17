@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face{
+    font-family: 'Work_Sans';
+    src: url(../assets/fonts/Work_Sans);
+}
+@font-face{
+    font-family: 'vtks-challenge';
+    src: url(../assets/fonts/vtks-challenge);
+}
+ion-card-title{
+    font-family:'Work_Sans';
+    color: #AB1A45 !important;
+    font-weight: bold;
+    text-align: center_;
+    background: #ACF4DC; 
+}
+
+h2{
+    font-family: 'vtks-challenge';
+    color: blueviolet;
+}
