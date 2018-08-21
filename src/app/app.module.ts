@@ -13,12 +13,10 @@ import {HumanidadesPage} from '../pages/humanidades/humanidades';
 @NgModule({
     declarations: [
         MyApp,
-        HomePage
+        HomePage,
         HemerotecaPage,
         CienciasPage,
-        HumanidadesPage
-        
-        
+        HumanidadesPage        
     ],
     imports: [
         BrowserModule,
@@ -27,8 +25,10 @@ import {HumanidadesPage} from '../pages/humanidades/humanidades';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        HomePage
-        
+        HomePage,
+        HemerotecaPage,
+        CienciasPage,
+        HumanidadesPage        
     ],
     providers: [
         StatusBar,
