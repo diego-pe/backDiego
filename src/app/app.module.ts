@@ -10,6 +10,10 @@ import {HomePage} from '../pages/home/home';
 import {HemerotecaPage} from'../pages/hemeroteca/hemeroteca';
 import {CienciasPage} from'../pages/ciencias/ciencias';
 import {HumanidadesPage} from '../pages/humanidades/humanidades';
+import {HttpClientModule} from'@angular/common/http';
+
+
+import { ConetarProvider } from '../providers/conetar/conetar';
 @NgModule({
     declarations: [
         MyApp,
@@ -20,7 +24,8 @@ import {HumanidadesPage} from '../pages/humanidades/humanidades';
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        HttpClientModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -33,7 +38,8 @@ import {HumanidadesPage} from '../pages/humanidades/humanidades';
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConetarProvider
     ]
 })
 export class AppModule {}
