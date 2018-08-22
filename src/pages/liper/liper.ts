@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {ConetarProvider} from '../../providers/conetar/conetar';
 
 /**
  * Generated class for the LiperPage page.
@@ -10,16 +11,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-liper',
-  templateUrl: 'liper.html',
+    selector: 'page-liper',
+    templateUrl: 'liper.html',
 })
 export class LiperPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    constructor(public navCtrl: NavController, public navParams: NavParams, private acceso: ConetarProvider) {
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LiperPage');
-  }
-
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad LiperPage');
+    }
+    numero;
+    consultar() {
+        let estado = this.acceso.traerListPer(this.numero);
+        estado.subscribe(data => {
+            console.log(data);
+        }, err => {
+            console.log(err);
+        });
+    }
 }
+
+
