@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ConetarProvider} from '../../providers/conetar/conetar';
+import {VerperfilPage} from'../verperfil/verperfil'
 
 /**
  * Generated class for the LiperPage page.
@@ -23,6 +24,8 @@ export class LiperPage {
         console.log('ionViewDidLoad LiperPage');
     }
     numero;
+    edificio;
+
     consultar() {
         let estado = this.acceso.traerListPer(this.numero);
         estado.subscribe(data => {
@@ -30,7 +33,19 @@ export class LiperPage {
         }, err => {
             console.log(err);
         });
+
     }
+    ejecutar(laRespuestaDelservidor) {
+        this.edificio = laRespuestaDelservidor.results;
+    }
+    verperfil(){
+        this.navCtrl.push(VerperfilPage),{data;persona} 
+        
+    }
+    Registro
+
+
+
 }
 
 

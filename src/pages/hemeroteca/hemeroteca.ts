@@ -59,13 +59,7 @@ export class HemerotecaPage {
     }
     */
 
-    tabla() {
-        this.edificio = Array();
-        for (let i = 1; i < this.numero2; i++) {
-            if ((this.numero1 * i) % this.numero3 == 0)==this.Ctrl;
-            this.edificio;
-        }
-
+   
 
 
 

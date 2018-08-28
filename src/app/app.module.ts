@@ -11,21 +11,27 @@ import {HemerotecaPage} from'../pages/hemeroteca/hemeroteca';
 import {CienciasPage} from'../pages/ciencias/ciencias';
 import {HumanidadesPage} from '../pages/humanidades/humanidades';
 import {HttpClientModule} from'@angular/common/http';
-
-
+import {SifuncionaPage} from '../pages/sifunciona/sifunciona';
+import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
+import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada'
 import { ConetarProvider } from '../providers/conetar/conetar';
+import {RegistroPage} from '../pages/registro/registro';
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
         HemerotecaPage,
         CienciasPage,
-        HumanidadesPage        
+        HumanidadesPage,
+        SifuncionaPage,
+        SumaobjetoPage,
+        SumaseparadaPage,
+        RegistroPage        
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
-        HttpClientModule
+        HttpClientModule,
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -33,7 +39,12 @@ import { ConetarProvider } from '../providers/conetar/conetar';
         HomePage,
         HemerotecaPage,
         CienciasPage,
-        HumanidadesPage        
+        HumanidadesPage,  
+        SifuncionaPage,
+        SumaobjetoPage,
+        SumaseparadaPage,
+        RegistroPage  
+          
     ],
     providers: [
         StatusBar,
