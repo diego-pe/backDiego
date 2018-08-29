@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {RegistroPageModule} from '../registro/registro.module';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 /**
@@ -11,34 +11,35 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @IonicPage()
 @Component({
-  selector: 'page-registro',
-  templateUrl: 'registro.html',
+    selector: 'page-registro',
+    templateUrl: 'registro.html',
 })
 export class RegistroPage {
-  
-    
+
+
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private Cosvalfor: FormBuilder) {
-      
-  }
-  RegPersona: FormGroup;
-  iniciarformulario(){
-      this.RegPersona = this.Cosvalfor.group({
-          tipo: ['', [Validators.required]],
-          numero: ['', [Validators.required, Validators.pattern(/^[o-9] {5,20}$/ )]],
-          nombre: ['', [Validators.pattern(/^ [a-zA-ZáéíóúÁÉÍÓÚ ÜñÑ] {2,30}$/)]],
-          apellido: ['', [Validators.pattern(/^ [a-zA-ZáéíóúÁÉÍÓÚ ÜñÑ] {2,30}$/)]],
-          telefono: ['', [Validators.pattern, Validators.pattern(/^[o-9] {5,15}$/) ]],
-          Email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]]
-      });
-      
-  }
+        this.iniciarFormulario();
+    }
+    RegPersona: FormGroup;
+    iniciarFormulario() {
+        this.RegPersona = this.Cosvalfor.group({
+            tipo: ['', [Validators.required]],
+            numero: ['', [Validators.required, Validators.pattern(/^[o-9] {5,20}$/)]],
+            nombre: ['', [Validators.pattern(/^ [a-zA-ZáéíóúÁÉÍÓÚ ÜñÑ] {2,30}$/)]],
+            apellido: ['', [Validators.pattern(/^ [a-zA-ZáéíóúÁÉÍÓÚ ÜñÑ] {2,30}$/)]],
+            telefono: ['', [Validators.pattern, Validators.pattern(/^[o-9] {5,15}$/)]],
+            Email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]],
+            Nacimiento: ['', [Validators.required]]
+        });
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegistroPage');
-  }
-  RegistroPageModule(){
-      this.navCtrl.push(RegistroPage,{})
-  }
+    }
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad RegistroPage');
+    }
+    RegistroPageModule() {
+        this.navCtrl.push(RegistroPage, {})
+    }
 
 }

@@ -15,7 +15,13 @@
 
 <ion-content padding>
     <ion-list>
-        <from [formGruop]="RegPersona" (ngSubmit) ="regPer()"n novalidate>
+        <form [formGroup]="RegPersona" (ngSubmit) ="regPer()"n novalidate>
+            <ion-list>
+                <ion-item>
+                    <ion-label>Nacimiento</ion-label>
+                    <ion-datetime displayFormat="D MM YYYY" pickerFormat="D MM " ></ion-datetime>
+                </ion-item>
+            </ion-list>
             <ion-item>
                 <ion-label ion-text floating>seleccion tipo</ion-label>
                 <ion-select>
@@ -24,26 +30,55 @@
                     <ion-option value="3">PassPort</ion-option>
                     <ion-option value="4">T:E</ion-option>
                     <ion-option value="5">sivil</ion-option>
+
                 </ion-select>
+
+                <ion-item *ngIf="RegPersona.get('tipo').errror && RegPersona.get('tipo').dirty">
+                    <p color='danger' ion-text *ngIf="RegPersona.get('tipo').hasError('requered')">El campo es Requerido</p>
+                </ion-item>
+
                 <ion-item>
                     <ion-label ion-text floating>ingrese la cedula </ion-label>
-                </ion-item>>
+                    <ion-input fromControlName="numero" type="text"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="RegPersona.get('numero').errror && RegPersona.get('numero').dirty">
+                    <p color='danger' ion-text *ngIf="RegPersona.get('numero').hasError('requered')">El campo es Requerido</p>
+                    <p color='danger' ion-text *ngIf="RegPersona.get('numero').hasError('pattern')">Ej 2345 de tener numeros</p>
+                </ion-item>
+
                 <ion-item>
                     <ion-label ion-text floating>ingrese el nombre</ion-label>
+                    <ion-input fromControlName="nombre" type="text"></ion-input>
                 </ion-item>
+                <ion-item *ngIf="RegPersona.get('nombre').errror && RegPersona.get('nombre').dirty">
+                    <p color='danger' ion-text *ngIf="RegPersona.get('nombre').hasError('requered')">El campo es Requerido</p>
+                    <p color='danger' ion-text *ngIf="RegPersona.get('nombre').hasError('pattern')">Ej 2345 el campo no debe tener numeros</p>
+                </ion-item>
+
                 <ion-item>
                     <ion-label ion-text floating>ingrese el telefono</ion-label>
+                    <ion-input fromControlName="telefono" type="text"></ion-input>
                 </ion-item>
+                <ion-item *ngIf="RegPersona.get('telefono').errror && RegPersona.get('telefono').dirty">
+                    <p color='danger' ion-text *ngIf="RegPersona.get('telefono').hasError('requerido')">El campo es Requerido</p>
+                    <p color='danger' ion-text *ngIf="RegPersona.get('telefono').hasError('pattern')">Ej 2345 el campo debe tener numeros</p>
+                </ion-item>
+
                 <ion-item>
                     <ion-label ion-text floating>ingrese el Email</ion-label>
+                    <ion-input fromControlName="Email" type="text"></ion-input>
                 </ion-item>
+                <ion-item *ngIf="RegPersona.get('email').errror && RegPersona.get('email').dirty">
+                    <p color='danger' ion-text *ngIf="RegPersona.get('email').hasError('requerido')">El campo es Requerido</p>
+                    <p color='danger' ion-text *ngIf="RegPersona.get('email').hasError('pattern')">Ej 2345Q@12.com</p>
+                    <p color='danger' ion-text *ngIf="RegPersona.get('email').hasError('maxLength')">Maxio 30 Plabras</p>
+                </ion-item>
+
                 <ion-item>
-                    <button type="submit" ion-button [disable]=!"Regpersona.valid"</button>
-                    <button type="submit" ion-button [disable]=!"Regpersona.valid"</button>
+                    <button type="submit" ion-button [disable]=!"RegPersona.valid"></button>
+                    <button type="submit" ion-button color="primary" ></button>
                 </ion-item>
-
             </ion-item>
-
-        </from>
-
+        </form>
+    </ion-list>
 </ion-content>
