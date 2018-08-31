@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ConetarProvider} from '../../providers/conetar/conetar';
-import {VerperfilPage} from'../verperfil/verperfil'
+import {VerperfilPage} from '../verperfil/verperfil'
 
 /**
  * Generated class for the LiperPage page.
@@ -38,12 +38,10 @@ export class LiperPage {
     ejecutar(laRespuestaDelservidor) {
         this.edificio = laRespuestaDelservidor.results;
     }
-    verperfil(){
-        this.navCtrl.push(VerperfilPage),{data;persona} 
-        
-    }
-    Registro
+    verperfil(persona) {
+        this.navCtrl.push(VerperfilPage, {Data: persona});
 
+    }
 
 
 }
