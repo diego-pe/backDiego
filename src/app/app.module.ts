@@ -16,6 +16,8 @@ import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
 import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada'
 import { ConetarProvider } from '../providers/conetar/conetar';
 import {RegistroPage} from '../pages/registro/registro';
+import {BusPerPage} from '../pages/bus-per/bus-per';
+import {RadioPage} from '../pages/radio/radio';
 @NgModule({
     declarations: [
         MyApp,
@@ -26,7 +28,10 @@ import {RegistroPage} from '../pages/registro/registro';
         SifuncionaPage,
         SumaobjetoPage,
         SumaseparadaPage,
-        RegistroPage        
+        RegistroPage,
+        BusPerPage,
+        RadioPage,
+              
     ],
     imports: [
         BrowserModule,
@@ -43,7 +48,9 @@ import {RegistroPage} from '../pages/registro/registro';
         SifuncionaPage,
         SumaobjetoPage,
         SumaseparadaPage,
-        RegistroPage  
+        RegistroPage,
+        BusPerPage,
+        RadioPage, 
           
     ],
     providers: [

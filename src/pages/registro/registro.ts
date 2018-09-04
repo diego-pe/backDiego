@@ -5,6 +5,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LoadingController} from 'ionic-angular';
 import {ConetarProvider} from '../../providers/conetar/conetar';
 import {AlertController} from 'ionic-angular';
+
+
 /**
  * Generated class for the RegistroPage page.
  *

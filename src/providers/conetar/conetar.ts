@@ -29,6 +29,10 @@ export class ConetarProvider {
     enviarALServidor(persona:any){
         return this.http.post("http//192.168.0.237/flas02/controller/registro.php", JSON.stringify(persona), "manejo al rismo de todo las persona");
     }
+    servidorBuscar(criterio){
+        return this.http.post("http//192.168.0.237/flas02/controller/registro.php", JSON.stringify(criterio), this.options); 
+       
+    }
 }
 
 

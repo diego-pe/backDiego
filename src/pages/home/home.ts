@@ -5,6 +5,7 @@ import {LiperPage} from '../liper/liper'
 import {VerperfilPage} from '../verperfil/verperfil'
 import {SifuncionaPage} from '../sifunciona/sifunciona'
 import {RegistroPage} from '../registro/registro'
+import {BusPerPage} from '../bus-per/bus-per'
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -23,12 +24,14 @@ export class HomePage {
     Sifunciona() {
         this.navCtrl.push(SifuncionaPage);
     }
-    SiRegistroPage(){
+    RegistroPage() {
         this.navCtrl.push(RegistroPage);
     }
-        
-        
+    BusPerPage() {
+        this.navCtrl.push(BusPerPage);
     }
+
+}
 
 
 
