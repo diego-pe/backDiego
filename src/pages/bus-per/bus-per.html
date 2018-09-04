@@ -39,4 +39,23 @@
     </ion-list>
     <h1>los que formaron una de las ideas de la formacion que todo son mejores </h1>
     
+    <ion-card>
+        <ion-card-header>
+            Los resultados son:
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item *ngFor="let persona of edificio">
+                    <ion-avatar item-start>
+                        <img src="http://192.168.0.237/flas011/img/{{persona.foto}}">
+                    </ion-avatar>
+                    <h2>{{persona.nombre}} {{persona.apellido}}</h2>
+                    <p>{{persona.email}}</p>
+                    <button ion-button clear item-end>Ver Perfil</button>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+    
+    
 </ion-content>

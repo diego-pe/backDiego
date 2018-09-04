@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ToastController} from 'ionic-angular';
+import {PerperPage} from '../perper/perper';
 /**
  * Generated class for the BusPerPage page.
  *
@@ -17,6 +18,7 @@ import {ToastController} from 'ionic-angular';
 export class BusPerPage {
     item = 1;
     criterio;
+    edificio;
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
         public toastCtrl: ToastController
@@ -24,10 +26,13 @@ export class BusPerPage {
     ) {
     }
 
-
     ionViewDidLoad() {
         console.log('ionViewDidLoad BusPerPage');
     }
+    cargarVista(data) {
+        this.edificio = data.result;
+    }
+
     buscar() {
         if (this.item != 1 && this.criterio == "") {
             this.presentToast("El criterio no puede estar solo");
@@ -44,9 +49,14 @@ export class BusPerPage {
     }
 
     verifique() {
-        
+
         this.criterio = ''
         this.presentToast("El criterio debe ser cambiado.!!")
+    }
+
+    cargarVista(data) {
+        this.edificio = data.result;
+
     }
 
     presentToast(Mensaje: string) {
@@ -58,6 +68,7 @@ export class BusPerPage {
             duration: 200,
         });
         toast.present();
+
 
     }
 }

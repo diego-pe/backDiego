@@ -7,17 +7,18 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 
-import {HemerotecaPage} from'../pages/hemeroteca/hemeroteca';
-import {CienciasPage} from'../pages/ciencias/ciencias';
+import {HemerotecaPage} from '../pages/hemeroteca/hemeroteca';
+import {CienciasPage} from '../pages/ciencias/ciencias';
 import {HumanidadesPage} from '../pages/humanidades/humanidades';
-import {HttpClientModule} from'@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {SifuncionaPage} from '../pages/sifunciona/sifunciona';
 import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
 import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada'
-import { ConetarProvider } from '../providers/conetar/conetar';
+import {ConetarProvider} from '../providers/conetar/conetar';
 import {RegistroPage} from '../pages/registro/registro';
 import {BusPerPage} from '../pages/bus-per/bus-per';
 import {RadioPage} from '../pages/radio/radio';
+import {PerperPage} from '../pages/perper/perper';
 @NgModule({
     declarations: [
         MyApp,
@@ -31,7 +32,7 @@ import {RadioPage} from '../pages/radio/radio';
         RegistroPage,
         BusPerPage,
         RadioPage,
-              
+        PerperPage
     ],
     imports: [
         BrowserModule,
@@ -44,20 +45,21 @@ import {RadioPage} from '../pages/radio/radio';
         HomePage,
         HemerotecaPage,
         CienciasPage,
-        HumanidadesPage,  
+        HumanidadesPage,
         SifuncionaPage,
         SumaobjetoPage,
         SumaseparadaPage,
         RegistroPage,
         BusPerPage,
-        RadioPage, 
-          
+        RadioPage,
+        PerperPage
+
     ],
     providers: [
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ConetarProvider
+        ConetarProvider
     ]
 })
 export class AppModule {}
